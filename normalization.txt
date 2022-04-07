@@ -1,0 +1,52 @@
+Normalization:-
+
+		Normalization is the  technique for organizing the data in database. it helps to 		minimize redundany y (duplication), insertion anomaly, update anomaly & deletion 		anomaly.
+
+
+
+The most commonly used normal forms:
+
+		1)First normal form(1NF)
+		2)Second normal form(2NF)
+		3)Third normal form(3NF)
+
+
+
+
+""""""""""""""NEED FOR NORMALIZATION:-"""""""""""""""""""""""""""""""""
+
+				1)	To produce good database design
+				2)	to ensure all database operation to be efficiently performed
+				3)	avoid any expensive DBMS operations
+				4)	avoid unnecessary replication of information
+
+
+
+++++++++++++++++++++++++++++++++++++++++ Question:2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* Table must be in 2NF and not contain any transitive partial dependency.
+* 3NF is used to reduce the data duplication. It is also used to achieve the data integrity.
+* If there is no transitive dependency for non-prime attributes, then the relation must be in 3NF.
+
+EMPLOYEE_DETAIL table:
+ EMP_ID | EMP_NAME   |	EMP_ZIP	 | EMP_STATE  |	EMP_CITY
+   200  |   Priya    |  343434   |    KKR     | Medad
+   300  |   Aarti    |  124001   |    HR      | Rohtak
+   400  |   Amarjeet |  323432   |    HR      | Deldi
+   500  |   Goldy    |  434555   |    UP      | Nodia
+   600  |   Nidhi    |  543353   |    RAJ     | Rajghar
+
+EMPLOYEE table:
+  EMP_ID |  EMP_NAME  |	EMP_ZIP
+   200  |   Priya    |  343434
+   300  |   Aarti    |  124001
+   500  |   Goldy    |  434555 2
+   600  |   Nidhi    |  543353
+
+EMPLOYEE_ZIP table:
+   EMP_ZIP	| EMP_STATE  |	EMP_CITY
+  343434   |    KKR     | Medad
+  124001   |    HR      | Rohtak
+   323432  |    HR      | Deldi
+   434555  |    UP      | Nodia
+  543353   |    RAJ     | Rajghar
