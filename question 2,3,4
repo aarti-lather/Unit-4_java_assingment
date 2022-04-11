@@ -1,0 +1,164 @@
+
+ques1++++++++++++++++++++++++++++
+
+mysql> desc firstevaluation;
+ERROR 1046 (3D000): No database selected
+mysql> use firstevaluation;
+Database changed
+mysql> create table Students(ID Integer, Name String);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'String)' at line 1
+mysql> create table Students(ID Integer, Name varchar(12));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc Students;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | YES  |     | NULL    |       |
+| Name  | varchar(12) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> ^C
+mysql> create table friends(ID Integer, friend_ID Integer);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc friends;
++-----------+------+------+-----+---------+-------+
+| Field     | Type | Null | Key | Default | Extra |
++-----------+------+------+-----+---------+-------+
+| ID        | int  | YES  |     | NULL    |       |
+| friend_ID | int  | YES  |     | NULL    |       |
++-----------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+mysql> create table packages(ID Integer, salary Float);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc packages
+    -> ^C
+mysql> desc packages;
++--------+-------+------+-----+---------+-------+
+| Field  | Type  | Null | Key | Default | Extra |
++--------+-------+------+-----+---------+-------+
+| ID     | int   | YES  |     | NULL    |       |
+| salary | float | YES  |     | NULL    |       |
++--------+-------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> create database question4;
+Query OK, 1 row affected (0.01 sec)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ques2)
+ ++++++++++++++++++++++++++++++++++
+ What is the 3NF? Explain with an example. You don’t need to draw the
+        tables or write the queries. Just mention the schema before and after the
+        third normal form.
+
+
+        answer:- relation is with 2NF and transitive dependency for non-prime attributes.(entity are non-transitively dependent on the primary key.)
+
+        a realtion is in 3NP if it hold atleaset one condition in non-trivial function dependency
+        X-->Y;
+        1)In this X is a super key;
+        2) Y is a prime attribute;
+
+        if we have A-->B and B-->C and somehow A is depend on C or A-->C this is transitive dependency;
+
+
+        transitive dependency:- when one column depends on a colum which is not prime key.
+
+
+
+        schema before 3NF====(studentID,studentName,studentZip,studentState,studentDistrict);
+
+        schema after 3NF====studentTable(studentID,studentZip,studentName);
+                        studentZipTable(studentZip,studentState,studentDistrict);
+
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ques3)
+        Briefly explain what a transaction is along with the ACID properties.
+
+        answer: :-
+        A logical unit of work on a database and action or series performed by a single user which reads and update the
+        content of the DB(series of action that perform  read and update.Transaction  must follow ACID.
+
+
+        example:-
+        there is a packing system where money i  widraw form one account and  added in another account , that will be
+        considered as transaction .(deducting the value then added and then commited);
+
+        A-----> atomicity
+        C-----> consistency
+        I-----> isolation
+        D----->  DEurability
+
+
+        atomicity:
+        atomicity means the entire  transction take place at once or does not happend at all;
+        if system fails in between then it will not commited;
+        example :-
+        there is two entities    A and B;
+        money is deduct from A and added in B that means the total amount is same;
+
+        C-----> consistency:-
+        consistency measn correctness
+        the amount before the transaction and after the transcation is same
+        EXAMPLE:-
+        before transcation  A have  500 rupyes and B have 300rs( and the total of thse is 500+300=800)
+        after  transfer 100 rs  A have 400rs and B have 400rs  (400+400=800)(total money should be same)
+
+
+        I-----> isolation:-
+        1) multiple transcation can occure concurrently
+        2) transction occur independently.
+        3) changing occuring in one transaction will not visible to other transaction
+
+
+        example:-
+        if money is widrawl  the money it should not  its not effect someother  deduction of money, (it is independent)
+
+
+
+        D----->  DEurability:-
+        once the transaction  is commited , the update and modification to the database are store in and written to disk
+        exapmle:-
+        banking system failure.
+        the effect of transaction is never lost it always permanent.
+
+
+        ques4+++++++++++++++++
+mysql> select * from persons;
++----------+----------+-----------+
+| personID | lastname | firstname |
++----------+----------+-----------+
+|        1 | wang     | allen     |
+|        2 | alice    | bob       |
++----------+----------+-----------+
+2 rows in set (0.01 sec)
+
+mysql> select * from address;
++-----------+----------+----------+------------+
+| addressID | personID | city     | state      |
++-----------+----------+----------+------------+
+|         1 |        2 | new york | NewYork    |
+|         2 |        3 | Leetcode | California |
++-----------+----------+----------+------------+
+2 rows in set (0.00 sec)
+
+
+
+
+mysql> select persons.firstname,persons.lastname,address.city,address.state from persons LEFT JOIN address ON persons.personID=address.personID;
++-----------+----------+----------+---------+
+| firstname | lastname | city     | state   |
++-----------+----------+----------+---------+
+| allen     | wang     | NULL     | NULL    |
+| bob       | alice    | new york | NewYork |
++-----------+----------+----------+---------+
+2 rows in set (0.00 sec)
+
+
+
