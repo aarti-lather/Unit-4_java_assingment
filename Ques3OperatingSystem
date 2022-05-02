@@ -1,0 +1,161 @@
+
+Question 3. What is an operating system and give examples. Also, discuss its main functions
+and responsibility
+
+Answer:--->
+An Operating System is an interface between a computer user and computer hardware. An operating system is a software which
+performs all the basic tasks like memory management, process management, input and output, and
+controlling  devices  those devices that are linked either internally or externally to a computer.(disk drives and printers)
+
+
+some Operating Systems are :-
+1)  Linux
+2)  Windows
+3)  Android
+
+
+  functions of an operating System:----
+
+
+  File Management
+  Proessor Managemnet
+  Security
+  Job Accounting
+  Coordination between other software and users
+  Memory Management
+  Device Management
+
+
+ Memory Management:-
+                    The term Memory can be defined as a collection of data in a specific format.
+Memory management refers to management of Primary Memory or Main Memory, In main memeory there  are large number of  bytes which have its own address.
+
+
+
+File Management:---
+                   File Management is use for file maintenance operations, its manage the data files in a computer system
+                    It has limited capabilities ans designed to manage individual or group of files
+
+Device Management:----
+                  Device Management in OS means controlling the I/O devices like microphone,keyboards, printer, Scanner
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=================================================================
+Question 2:-
+
+What is CAP theorem, discuss a scenario where CAP theorem helps you choose a
+technology over the other or helps you make a design decision.
+
+Answer:-
+The CAP theorem is a belief from theoretical computer science about distributed data stores that claims, in the event of a network failure on a distributed database,
+it is possible to provide either consistency or availability—but not both.
+
+any distributed system guarantees any two of the three stated later.
+1)  Consistency  (All reads receive the most recent write or an error.)
+2)  Availability (All reads contain data, but it might not be recent.)
+3)  Partition Tolerance (the system continues to operate despite arbitrary message loss or failure of
+    a part of the system).
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=================================================================
+
+Question4
+
+part a)
+What do you know about client server architecture?
+
+it Deal with organizational of component across the  network of computer and their interrelationship
+
+types:
+
+Client serve model
+per to per model
+
+
+Client serve model:----
+                 th most important and most widely used distributed system architecture
+                 client & serve roel are assigned and changeable
+
+               ____________
+               |           |
+               |           |
+               |           |
+               |  client   |<--------| request
+               |___________|         | rply
+                              _______|____
+                              |           |
+                              |           |
+                              |           |
+                              |  Server   |
+                              |___________|
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=================================================================
+part b)
+What is caching, explain its use cases?
+
+it is the memory which is very nearest to the CPU, all recent information are stored into cache memory
+The data in a cache is  stored  RAM (Random-access memory) and may also be used in correlation with a software component.
+Caches are used everywhere in our modern devices. It's found in many hardware components and throughout software.
+ The goal of caching is to store data from slow memory into fast memory so it can be retrieved quicker
+Use Cases:-
+1.Database Caching.
+2.CDN(Content Delivery Network)
+3.Web Caching.
+4.RDBMS Speedup
+5.Integrated Cache.
+6.General Cache.
+7.Token Caching
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=================================================================
+ part c)
+ what are web sockets where it is used.
+ ANswer===
+ The WebSocket protocol enables interaction between a web browser (or other client application) and a web server
+ Its allow both the server and the client to push messages at any time. Almost every borser supports Websockets
+ also solve HTTP issues:-
+                        )Full-duplex communication ----->  client and server can talk to each other independently(same time)
+                        Bi-directional protocol:----> client/server can send a message to the other party
+
+                       *) when connections are terminated  its can't recover automatically.we have to implement ourself
+
+
+uses:
+
+ Multiplayer games
+ Multimedia Chats
+ editing/coding
+ Social feed
+ Financial tickers
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   =================================================================
+   part d)
+    How are public and private keys used in encryption and decryption?
+Answer:
+public and private keys  both are commonly used for encryption and decryption.
+
+It is an encryption technique that uses a pair of keys for
+secure data communication.
+ In the pair of keys,
+  public key -----> encrypting (the plain text to convert it into ciphertext),public key is provided to the public
+  private key ----->used for decrypting (the ciphertext to read the message.), it given to the receiver
+
+All asymmetric key pairs are unique, so a message only be read by the person who has the corresponding private key
+
+
